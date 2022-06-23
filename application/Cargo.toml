@@ -1,0 +1,22 @@
+[package]
+name = "application"
+version = "0.1.0"
+authors = ["Robert Hanyecz <rh@hanye.cz>"]
+edition = "2021"
+
+[dependencies]
+cortex-m = "0.7.5"
+cortex-m-rt = "0.7.1"
+cortex-m-semihosting = "0.5.0"
+panic-semihosting = "0.6.0"
+stm32l4xx-hal = { version = "0.7.1", features = ["rt", "stm32l433" ] }
+
+
+[[bin]]
+name = "application"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1
+lto = true
